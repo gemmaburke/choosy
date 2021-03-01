@@ -19,6 +19,7 @@ A band name generator, for inspiration and incredulation!
 ## Functionality
 
 *   Integrate word-generating API to pluck resources on theme (genre/mood)
+    *   _Uses Datamuse word-finding query engine_ https://www.datamuse.com/api/
 *   Propositions to be chained (definite and indefinite articles - 'the', 'a', 'an' etc.)
 *   Specialised JS data file with additional results/suggestions?
 *   Current result (& previous results?) saved to state
