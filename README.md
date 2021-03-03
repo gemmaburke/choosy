@@ -30,14 +30,19 @@ A band name generator, for inspiration and incredulation!
 
 ### In progress:
 
-*   Colour palette & typography selection
-*   Mock-up Figma sketch of layout
-*   Landing page skeleton & button
+*   Refine API use & method to creatively exploit different search params
+*   Define methodology to chain/manipulate word results to give names > 1 word
 
 ### To do:
 
-*   API selection & testing
-*   Development feature 1 method & test
+*   Connect TEST_WORDS array to work in tandem with API (eventually replacing test words with dictionary results)
+*   Animate border frame to focus attention on result (i.e. flashing lights / name up in lights)
+
+### Done:
+
+*   Colour palette & typography selection
+*   Mock-up Figma sketch of layout
+*   Landing page skeleton & button
 
 ### `yarn start`
 
