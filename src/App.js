@@ -7,16 +7,22 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      words: []
+      words: [],
+      the: false
     };
   }
 
   addWords(result) {
-    this.setState({words: result});
-    console.log('Added words!', result, 'State update!', this.state.words);
+    let randomBoolean = Math.random() < 0.5;
+    if (randomBoolean) {
+      this.setState({words: result, the: true})
+    } else {
+      this.setState({words: result, the: false});
+    }
   }
 
   render() {
+
     return (
       <div className="App">
         <div className="wrapper">
@@ -34,7 +40,14 @@ class App extends React.Component {
               this.state.words.length > 0
               ? <div>
                   <p>Your band name is...</p>
-                  <h2>{this.state.words}</h2>
+                  <h2 className="results">
+                    {
+                      this.state.the
+                      ? 'The '
+                      : <></>
+                    }
+                    {this.state.words[1]} {this.state.words[0]}
+                  </h2>
                 </div>
               : <></>
             }

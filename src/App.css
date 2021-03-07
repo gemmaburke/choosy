@@ -41,6 +41,10 @@
   font-weight: lighter;
 }
 
+.results {
+  text-transform: capitalize;
+}
+
 button {
   background-color: #0F4C5C;
   color: #F2F2F2;

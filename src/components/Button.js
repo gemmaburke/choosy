@@ -1,16 +1,11 @@
 import React from 'react';
 
 const URL = 'https://api.datamuse.com/words?';
-const QUERY_PARAMS = 'rel_rhy=eh';
-// const TEST_WORDS = ['butter', 'tub', 'egg', 'friend', 'vagrant', 'ratio', 'lively', 'peacock', 'indigo', 'petulant', 'cabbage', 'fathom', 'awkward', 'maroon', 'radius', 'ambition',
-//  'yolk', 'perpendicular', 'correct', 'fortune', 'vague', 'nihilist', 'obvious', 'rattan', 'cowboy'];
+const QUERY_PARAMS = ['sl', 'sp', 'rel_rhy', 'rel_jjb', 'rel_trg'];
+const TEST_WORDS = ['butter', 'tub', 'egg', 'friend', 'vagrant', 'ratio', 'lively', 'peacock', 'indigo', 'petulant', 'cabbage', 'fathom', 'awkward', 'maroon', 'radius', 'ambition',
+ 'yolk', 'perpendicular', 'correct', 'fortune', 'vague', 'nihilist', 'obvious', 'rattan', 'cowboy'];
 
 class Button extends React.Component {
-
-  // Sequence for word generation:
-  //   * Set length of phrase using Math.random (i.e. min 1, max 6 etc)
-  //   * If length is 1, find word related to x or that sounds like x or rhymes with x (where x is cross-referenced against JS data file of test words?)
-  //   * If length is > 1
 
   getRandomIx(arr) {
     // Method to select random index position from the TEST_WORDS array
@@ -18,15 +13,18 @@ class Button extends React.Component {
   }
 
   async onClick() {
+    let firstWord = TEST_WORDS[this.getRandomIx(TEST_WORDS)];
+    let query = QUERY_PARAMS[this.getRandomIx(QUERY_PARAMS)];
+
     try {
-      let response = await fetch(URL + QUERY_PARAMS);
+      let response = await fetch(URL + query + '=' + firstWord);
       if (response.ok) {
         let result = await response.json();
         if (result.length > 1) {
           let randomWord = result[this.getRandomIx(result)];
-          this.props.addWords(randomWord.word);
+          this.props.addWords([firstWord, randomWord.word]);
         } else {
-          this.props.addWords(result.word);
+          this.props.addWords([firstWord, result.word]);
         }
         // add a conditional for 0 results? To be tested
 

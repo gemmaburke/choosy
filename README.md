@@ -37,6 +37,7 @@ A band name generator, for inspiration and incredulation!
 
 *   Connect TEST_WORDS array to work in tandem with API (eventually replacing test words with dictionary results)
 *   Animate border frame to focus attention on result (i.e. flashing lights / name up in lights)
+*   Add buttons / controls to further tweak results; i.e. set word length / swap word order (shuffle display array positions)
 
 ### Done:
 
