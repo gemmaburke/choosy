@@ -34,15 +34,31 @@
   background-color: #ABC4AB;
 }
 
-.selector h2 {
+.selector-head {
   margin: 0;
   padding: 40px 0;
   font-size: 1.5em;
   font-weight: lighter;
 }
 
-.results {
+.result {
+  margin: 20px 30%;
+  border: dotted 8px #713E5A;
+  animation: result-anim 9s infinite;
+  font-size: 1.2em;
+}
+
+@keyframes result-anim {
+  25% {border-color: #C49BBB;}
+  50% {border-color: #FF985C;}
+  75% {border-color: #0F4C5C;}
+  100%   {border-color: #713E5A;}
+}
+
+.bandname {
+  padding: 0;
   text-transform: capitalize;
+  color: #713E5A;
 }
 
 button {

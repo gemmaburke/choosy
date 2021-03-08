@@ -33,14 +33,14 @@ class App extends React.Component {
             <h1>Choosy!</h1>
           </div>
           <div className="selector">
-            <h2>The automatic band name generator</h2>
+            <h2 className="selector-head">The automatic band name generator</h2>
             <Button addWords={(result) => this.addWords(result)}/>
             <br/>
             {
               this.state.words.length > 0
-              ? <div>
+              ? <div className="result">
                   <p>Your band name is...</p>
-                  <h2 className="results">
+                  <h2 className="bandname">
                     {
                       this.state.the
                       ? 'The '
